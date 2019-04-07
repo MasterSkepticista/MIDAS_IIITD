@@ -1,12 +1,5 @@
 # CV Problem Code for MIDAS LAB
-Run this file on Python Commandline, or use the Jupyter Notebook (recommended).
-For CNN
-
-```
->>python3 sketch_CNN.py
-```
-
-No extra args necessary.
+Use the Jupyter Notebook (recommended).
 
 Training time ~4 minutes on an i3-3rd gen (NO GPU)
 
