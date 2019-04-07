@@ -10,6 +10,7 @@ from keras.layers import Conv2D, MaxPooling2D
 from keras.layers.normalization import BatchNormalization
 from keras.layers.advanced_activations import LeakyReLU
 from keras.utils import to_categorical
+from keras import regularizers
 from sklearn.model_selection import train_test_split
 # For imageplots and colormaps
 import matplotlib.cm as cm
@@ -69,7 +70,7 @@ def network(batch_size, epochs, train_X, train_y, valid_X, valid_y):
     model.add(LeakyReLU(alpha = 0.1))
     model.add(MaxPooling2D((2,2), padding = 'same'))
     model.add(Conv2D(32, kernel_size, activation = 'linear', padding = 'same'))
-    model.add(LeakyReLU(alpha = 0.1))
+    model.add(LeakyReLU(alpha = 0.01))
     model.add(MaxPooling2D((2,2), padding = 'same'))
     model.add(Flatten())
     model.add(Dense(64, activation = 'linear'))
@@ -107,6 +108,6 @@ def plots(history):
 train_X, train_y, test_X, num_classes = extract()
 train_X, train_y, valid_X, valid_y = split(train_X, train_y)
 data_summary(train_X, train_y, valid_X, valid_y)
-history, predictions = network(1, 3, train_X, train_y, valid_X, valid_y)
+history, predictions = network(1, 10, train_X, train_y, valid_X, valid_y)
 plots(history)
 print(predictions)
