@@ -1,5 +1,5 @@
 # CV Problem Code for MIDAS LAB
-Run this file on Python Commandline.
+Run this file on Python Commandline, or use the Jupyter Notebook (recommended).
 For CNN
 
 ```
